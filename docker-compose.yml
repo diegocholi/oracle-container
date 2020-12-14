@@ -2,7 +2,7 @@ version: "3.1"
 
 services:
   db-oracle:
-    image: oracle/database:12.1.0.2-ee
+    image: oracle/database:19.3.0-ee
     restart: unless-stopped
     ports:
       - 1521:1521
@@ -18,5 +18,4 @@ services:
       # se você não tem nada a excluir, remova a variável
       EXCLUDE: user
     volumes:
-      - ./volumes/oracle/data:/opt/oracle/dump
-      - ./volumes/oracle/setup-scripts:/opt/oracle/scripts/setup
+      - ./volumes/oracle/data:/opt/oracle/oradata
